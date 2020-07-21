@@ -15,7 +15,7 @@ if (!proxyUrl) {
 
 app.use(morgan('dev'));
 app.use(cors());
-app.use('/', proxy(process.env.PROXY_URL, { https: true }));
+app.use('/', proxy(proxyUrl, { https: true }));
 app.listen(port, () => {
-  console.log(`Proxy server listening on port ${port}`)
+  console.log(`Proxy server listening on port ${port} and proxying to ${proxyUrl}`)
 });
